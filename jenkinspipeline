@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clone code') {
+            steps {
+                git 'https://github.com/Hema79/Development-Team-Repo.git'
+            }
+        }
+          stage('second stage') {
+            steps {
+                sh 'mvn package -f pom.xml'
+            }
+        }
+    }
+}
