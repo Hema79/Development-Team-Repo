@@ -14,7 +14,7 @@ pipeline {
         }
         stage('uploade code to nexus') {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: '', groupId: 'project', nexusUrl: '18.220.5.67:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.3'
+                nexusArtifactUploader (artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: '', groupId: 'project', nexusUrl: '18.220.5.67:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.3')
             }
         }
     }
